@@ -1,0 +1,51 @@
+public class HalfDiamondPattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);  
+        System.out.print("Enter any number: ");
+        sc.nextInt();  
+
+        int n = 5; 
+
+        // Print the top single asterisk row
+        System.out.println("*");
+
+        // Print the upper part of the diamond including the center
+        for (int i = 1; i <= n; i++) {
+            System.out.print("*");  
+            
+            // Print ascending numbers from 1 to i
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            
+            // Print descending numbers from i-1 to 1
+            for (int j = i - 1; j >= 1; j--) {
+                System.out.print(j);
+            }
+
+            System.out.println("*");  
+        }
+
+        // Print the lower part of the diamond excluding the center
+        for (int i = n - 1; i >= 1; i--) {
+            System.out.print("*");  
+            
+            // Print ascending numbers from 1 to i
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            
+            // Print descending numbers from i-1 to 1
+            for (int j = i - 1; j >= 1; j--) {
+                System.out.print(j);
+            }
+
+            System.out.println("*"); 
+        }
+
+        // Print the bottom single asterisk row
+        System.out.println("*");
+
+        sc.close();  
+    }
+}
