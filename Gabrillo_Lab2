@@ -1,0 +1,51 @@
+// Base class to store cylinder dimensions
+class Cylinder {
+    protected double radius;  // Radius of the cylinder
+    protected double height;  // Height of the cylinder
+    
+    // Constructor to initialize the radius and height
+    public Cylinder(double radius, double height) {
+        this.radius = radius;
+        this.height = height;
+    }
+}
+
+// Derived class to calculate cylinder properties
+class CylinderCalculator extends Cylinder {
+    
+    // Constructor that initializes the base class with radius and height
+    public CylinderCalculator(double radius, double height) {
+        super(radius, height);
+    }
+
+    // Method to compute the surface area of the cylinder
+    public double calculateSurfaceArea() {
+        return 2 * Math.PI * radius * radius + 2 * Math.PI * radius * height;
+    }
+
+    // Method to compute the volume of the cylinder
+    public double calculateVolume() {
+        return Math.PI * radius * radius * height;
+    }
+}
+
+// Main class to execute the program
+public class Lastname_Lab2 {
+    public static void main(String[] args) {
+        // Define radius and height of the cylinder
+        double radius = 5.0;
+        double height = 10.0;
+        
+        // Create an instance of CylinderCalculator with specified dimensions
+        CylinderCalculator cylinder = new CylinderCalculator(radius, height);
+        
+        // Compute the surface area of the cylinder
+        double surfaceArea = cylinder.calculateSurfaceArea();
+        // Compute the volume of the cylinder
+        double volume = cylinder.calculateVolume();
+        
+        // Print the results
+        System.out.printf("Surface Area of the cylinder: %.2f\n", surfaceArea);
+        System.out.printf("Volume of the cylinder: %.2f\n", volume);
+    }
+}
